@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Tim Newbold | Data Professional{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="logo">
+      <span class="name">Tim Newbold</span> | <span class="title">Data Professional</span>
+    </div>
+    <div class="nav-container">
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Theme toggle placeholder -->
+       <div class="toggle-switch">
+      <input type="checkbox" id="theme-toggle" aria-label="Toggle theme">
+      <label for="theme-toggle"></label>
+    </div>
+      </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <p>Created by Tim Newbold, 2025.</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="{{ url_for('static', filename='js/intro-canvas.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/theme-toggle.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/timeline.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/scroll-reveal.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/card-tilt.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/contact-canvas.js') }}"></script>
+  {% block scripts %}
+
+  {% endblock %}
+</body>
+</html>
+
+

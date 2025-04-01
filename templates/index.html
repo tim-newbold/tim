@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+{% block title %}Tim Newbold | Data Professional - Portfolio{% endblock %}
+{% block content %}
+<main>
+  <!-- Introduction Section -->
+  <section id="introduction" class="section introduction">
+    <div class="large-header">
+      <canvas id="demo-canvas"></canvas>
+      <div class="intro-text">
+         <h1>Hi, I'm <span class="highlight-name">Tim</span>...</h1>
+         <p>Welcome to my portfolio. I am a Data Professional passionate about leveraging data to drive insights.</p>
+      </div>
+    </div>
+  </section>
+  
+<!-- About Section -->
+<section id="about" class="section about">
+  <div class="section-content about-content">
+    <h2 class="background-title">Background</h2>
+    <p class="background-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <!-- Skill Cards -->
+    <div class="skills-cards">
+      <!-- Python Card -->
+      <div class="card tilt-card">
+        <div class="card-inner">
+          <div class="card-front-text">
+            <h3>Python</h3>
+          </div>
+          <div class="card-hover-text">
+            <p>7+ years of Python development experience with expertise in frameworks such as Django and Flask.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SQL Card -->
+      <div class="card tilt-card">
+        <div class="card-inner">
+          <div class="card-front-text">
+            <h3>SQL</h3>
+          </div>
+          <div class="card-hover-text">
+            <p>Extensive experience with SQL databases and query optimization.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Machine Learning Card -->
+      <div class="card tilt-card">
+        <div class="card-inner">
+          <div class="card-front-text">
+            <h3>Machine Learning</h3>
+          </div>
+          <div class="card-hover-text">
+            <p>Expert in ML algorithms and model building.</p>
+          </div>
+        </div>
+      </div>
+      <!-- AI Card -->
+      <div class="card tilt-card">
+        <div class="card-inner">
+          <div class="card-front-text">
+            <h3>AI</h3>
+          </div>
+          <div class="card-hover-text">
+            <p>Experienced in deploying AI solutions in production environments.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+<!-- Work Section -->
+<section id="work" class="section work">
+  <div class="section-content work-content">
+    <h2 class="section-title">Work History</h2>
+    <p class="work-subtitle">This is my professional path, showcasing my growth and experience over the years.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>MIT Professional Education Applied Data Science Program | 2024 - 2025</h3>
+          <h4>Leveraging AI for Effective Decision-Making</h4>
+          <p>Company A – Led analytics initiatives using Python and SQL for large-scale data solutions.</p>
+          <div class="tags">
+            <span>Python</span>
+            <span>AI</span>
+            <span>ML</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Analytics & Reporting Manager | 2018 - 2024</h3>
+          <h4>M&T Bank</h4>
+          <p>Strategic leader overseeing the development and management of Business Banking's data analytics and reporting infrastructure.</p>
+          <div class="tags">
+            <span>SQL</span>
+            <span>Python</span>
+            <span>Tableau | Power BI</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Software Engineer | 2016 - 2018</h3>
+          <h4>Integer</h4>
+          <p>Hybrid role combining software development and project management, focused on manufacturing applications and enterprise software solutions.</p>
+          <div class="tags">
+            <span>SQL</span>
+            <span>C#</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Senior Data Analyst | 2012 - 2016</h3>
+          <h4>Citigroup</h4>
+          <p>Data Analyst for Citi’s Master Reference data quality platform.</p>
+          <div class="tags">
+            <span>SQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Software Engineer | 2011 - 2012</h3>
+          <h4>Algonquin Studios</h4>
+          <p>Software Engineer responsible for building and maintaining .NET Web applications.</p>
+          <div class="tags">
+            <span>SQL</span>
+            <span>.NET</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+  <div class="section-content">
+    <h2 class="section-title">My Side Projects</h2>
+    <p class="projects-subtitle">A selection of personal projects showcasing my technical skills and creative problem solving.</p>
+
+    <!-- Tag Filter Navigation -->
+    <!-- Tag Filter Navigation -->
+    <div class="project-tags">
+      <button class="tag-btn active" data-tag="all">All</button>
+      <button class="tag-btn" data-tag="Python">Python</button>
+      <button class="tag-btn" data-tag="Flask">Flask</button>
+      <button class="tag-btn" data-tag="JavaScript">JavaScript</button>
+      <button class="tag-btn" data-tag="Machine Learning">Machine Learning</button>
+      <button class="tag-btn" data-tag="AI">AI</button>
+    </div>
+
+    <!-- Projects List -->
+    <div class="projects-list">
+      <!-- Test Project 1 -->
+      <div class="project-card" data-tags="Python,CNN,AI">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/test_project1.png') }}" alt="Test Project 1">
+        </div>
+        <h3>Facial Emotion Detection Neural Net</h3>
+        <p>My personal portfolio site you are visting!</p>
+        <div class="project-tags-display">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">CNN</span>
+          <span class="project-tag">AI</span>
+        </div>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <!-- Test Project 2 -->
+      <div class="project-card" data-tags="ANN,Machine Learning,Python">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/test_project2.png') }}" alt="Test Project 2">
+        </div>
+        <h3>Street Housing Neural Net</h3>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="project-tags-display">
+          <span class="project-tag">ANN</span>
+          <span class="project-tag">Machine Learning</span>
+          <span class="project-tag">Python</span>
+        </div>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <!-- Test Project 3 -->
+      <div class="project-card" data-tags="Python,Machine Learning, AI">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/nascar.jpg') }}" alt="Nascar">
+        </div>
+        <h3>Nascar Result Forecasting</h3>
+        <p>NASCAR Race Outcome Prediction Using AI</p>
+        <div class="project-tags-display">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Machine Learning</span>
+          <span class="project-tag">AI</span>
+        </div>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <!-- Test Project 4 -->
+      <div class="project-card" data-tags="Python,Flask,AI">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/flask.png') }}" alt="Test Project 1">
+        </div>
+        <h3>My Flask Site</h3>
+        <p>My personal portfolio site you are visting!</p>
+        <div class="project-tags-display">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Flask</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">Javascript</span>
+        </div>
+        <a href="#" class="btn">View Project</a>
+      </div>
+
+      <!-- Formula One -->
+      <div class="project-card" data-tags="Python,AI, ML, Power BI, SQL">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/lando.png') }}" alt="Lando">
+        </div>
+        <h3>Formula 1 Result Forecasting</h3>
+        <p>Formula 1 Race Outcome Prediction Using AI</p>
+        <div class="project-tags-display">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Machine Learning</span>
+          <span class="project-tag">AI</span>
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">SQL</span>
+        </div>
+        <a href="https://github.com/tim-newbold/formula-one" class="btn">View Project</a>
+      </div>
+
+  <!-- Food Hub order Analysis -->
+      <div class="project-card" data-tags="Python,EDA,PCA">
+        <div class="project-image">
+          <img src="{{ url_for('static', filename='images/food.jpg') }}" alt="Lando">
+        </div>
+        <h3>Foodhub Order Analysis</h3>
+        <p>Foodhub</p>
+        <div class="project-tags-display">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">EDA</span>
+          <span class="project-tag">PCA</span>
+        </div>
+        <a href="#" class="btn">View Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="section-content contact-content">
+    <!-- Left Side: Contact Information -->
+    <div class="contact-left">
+      <h2 class="section-title">More ways to find me!</h2>
+      <ul class="contact-list">
+        <li>
+          <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn Logo">
+          <a href="https://www.linkedin.com/in/tim-newbold/" target="_blank">LinkedIn</a>
+        </li>
+        <li>
+          <img src="{{ url_for('static', filename='images/mit.png') }}" alt="MIT ADSP Icon">
+          <a href="https://olympus.mygreatlearning.com/eportfolio?pb_id=16749" target="_blank">MIT ADSP Cert</a>
+        </li>
+        <li>
+          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub Logo">
+          <a href="https://github.com/tim-newbold">GitHub</a>
+        </li>
+        <li>
+          <a href="{{ url_for('static', filename='resume.pdf') }}" download class="btn">Download Resume</a>
+        </li>
+        <li>
+          Email: <a href="mailto:timothyj.newbold@gmail.com">
+             timothyj.newbold@gmail.com
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right Side: Canvas for Future Animation -->
+    <div class="contact-right">
+      <canvas id="contact-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
