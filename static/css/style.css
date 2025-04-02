@@ -272,7 +272,12 @@ header nav ul li a:hover {
   color: var(--highlight);
 }
 
-
+@media (max-width: 600px) {
+  .intro-text {
+    left: 5%;
+    font-size: 1em;
+  }
+}
 
 /* About Section Content */
 .about-content {
@@ -306,7 +311,8 @@ header nav ul li a:hover {
 
 /* Skill Card Outer Border */
 .card {
-  width: 250px;
+  width: 100%;
+    max-width: 300px;
   padding: 3px;
   border-radius: 30px;
   background: linear-gradient(45deg, #ff0000, #C0C0C0, #0000ff, #4b0082, #8f00ff);
@@ -779,6 +785,11 @@ header nav ul li a:hover {
   display: block;
 }
 
+@media (max-width: 600px) {
+  #contact-canvas {
+    height: 200px;
+  }
+}
 
 /* Scroll Animation for Sections */
 .section {

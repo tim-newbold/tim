@@ -1,6 +1,8 @@
 (function () {
   const canvas = document.getElementById("contact-canvas");
   let width, height, ctx, points, target, animateHeader = true;
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30; // limit to 30 FPS
 
   if (!canvas) return;
 
@@ -14,14 +16,15 @@
     target = { x: width / 2, y: height / 2 };
 
     points = [];
-    const spacingX = width / 15;
-    const spacingY = height / 15;
+    const spacingX = width / 10;
+    const spacingY = height / 10;
 
     for (let x = 0; x < width; x += spacingX) {
       for (let y = 0; y < height; y += spacingY) {
         const px = x + Math.random() * spacingX;
         const py = y + Math.random() * spacingY;
         const p = { x: px, originX: px, y: py, originY: py };
+        p.color = getRandomColor();
         points.push(p);
       }
     }
@@ -32,7 +35,7 @@
       for (let j = 0; j < points.length; j++) {
         if (i === j) continue;
         const p2 = points[j];
-        if (closest.length < 5) {
+        if (closest.length < 3) {
           closest.push(p2);
         } else {
           let maxDist = 0, maxIndex = 0;
@@ -56,8 +59,6 @@
     }
 
     ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#121212";
-    ctx.fillRect(0, 0, width, height);
   }
 
   function addListeners() {
@@ -84,7 +85,12 @@
     }
   }
 
-  function animate() {
+  function animate(currentTime) {
+    requestAnimationFrame(animate);
+    const elapsed = currentTime - lastTime;
+    if (elapsed < fpsInterval) return;
+    lastTime = currentTime;
+
     if (animateHeader) {
       ctx.clearRect(0, 0, width, height);
       for (let i = 0; i < points.length; i++) {
@@ -106,14 +112,13 @@
         points[i].circle.draw();
       }
     }
-    requestAnimationFrame(animate);
   }
 
   function shiftPoint(p) {
     gsap.to(p, {
-      duration: 1 + Math.random(),
-      x: p.originX - 50 + Math.random() * 100,
-      y: p.originY - 50 + Math.random() * 100,
+      duration: 2 + Math.random() * 2,
+      x: p.originX - 20 + Math.random() * 40,
+      y: p.originY - 20 + Math.random() * 40,
       ease: "power2.inOut",
       onComplete: () => shiftPoint(p)
     });
@@ -122,10 +127,11 @@
   function drawLines(p) {
     if (!p.active) return;
     for (let i = 0; i < p.closest.length; i++) {
+      const [r, g, b] = p.color;
       ctx.beginPath();
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(p.closest[i].x, p.closest[i].y);
-      ctx.strokeStyle = `rgba(183, 148, 244, ${p.active})`;
+      ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${p.active})`;
       ctx.stroke();
     }
   }
@@ -135,14 +141,30 @@
     this.radius = rad;
     this.draw = () => {
       if (!this.active) return;
+      const [r, g, b] = this.pos.color;
       ctx.beginPath();
       ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = `rgba(98, 255, 240, ${this.active})`;
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${this.active})`;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${this.active})`;
       ctx.fill();
     };
   }
 
   function getDistance(p1, p2) {
     return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+  }
+
+  function getRandomColor() {
+    const colors = [
+      [255, 99, 132],
+      [54, 162, 235],
+      [255, 206, 86],
+      [75, 192, 192],
+      [153, 102, 255],
+      [255, 159, 64],
+      [98, 255, 240]
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 })();
