@@ -857,5 +857,19 @@ header nav ul li a:hover {
   }
 }
 
+/* TEMP FIX: Show all sections for debugging on mobile */
+@media (max-width: 768px) {
+  .section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .project-card,
+  .timeline-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 
 
