@@ -447,6 +447,19 @@ header nav ul li a:hover {
   transition: all 0.6s ease-out;
 }
 
+.job-title {
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+.job-years {
+  color: var(--gray);
+  font-weight: 400;
+  margin-left: 8px;
+  font-size: 0.95em;
+}
+
+
 .timeline-item.visible {
   opacity: 1;
   transform: translateY(0);
@@ -785,9 +798,25 @@ header nav ul li a:hover {
   display: block;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-left {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .contact-right {
+    width: 100%;
+    height: 200px; /* smaller height for mobile */
+  }
+
   #contact-canvas {
-    height: 200px;
+    width: 100%;
+    height: 100%;
   }
 }
 
