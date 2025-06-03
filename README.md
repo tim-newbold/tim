@@ -9,8 +9,8 @@ Welcome to my personal portfolio site, built using Python and Flask. This site s
 
 ## 🌐 Live Demo
 
-🔗 [Visit timdsmith.dev](https://www.timdsmith.dev)  
-*(Replace with your live link or remove this section if not deployed yet)*
+🔗 [Visit tim-newbold.com](https://www.tim-newbold.com)  
+
 
 ---
 
